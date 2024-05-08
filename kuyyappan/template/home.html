@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+<h1>Home Page</h1>
+<nav>
+    <a href="{% url 'ho' %}">Home</a>
+    <a href="{% url 'co' %}">Contact</a>
+    <a href="{% url 'ao' %}">About</a>
+    <a href="{% url 'reg' %}">Register</a>
+</nav>
+<img src="{% static 'image/image.jpg' %}">
+<table class="table table-dark">
+    <tr>
+        <th>S-No</th>
+        <th>Student Name</th>
+        <th>Student Number</th>
+        <th>FeedBack</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    {% for x in data %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{x.User_Name}}</td>
+        <td>{{x.Mobile}}</td>
+        <td>{{x.FeedBack}}</td>
+        <td><a href="dele/{{x.id}}" class="btn btn-danger">Delete</a></td>
+        <td><a href="up/{{x.id}}" class="btn btn-success">Update</a></td>
+    {% endfor %}
+    </tr>
+</table>
+
+
+
+</body>
+</html>

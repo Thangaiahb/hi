@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Contact Page</h1>
+<nav>
+    <a href="{% url 'ho' %}">Home</a>
+    <a href="{% url 'co' %}">Contact</a>
+    <a href="{% url 'ao' %}">About</a>
+</nav>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Enter Name" name="nams">
+    <input type="number" placeholder="Enter Number" name="num">
+    <textarea cols="3" rows="3" name="fed"></textarea>
+    <input type="submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Enter Name" value="{{single.User_Name}}" name="nams">
+    <input type="number" placeholder="Enter Number" value="{{single.Mobile}}" name="num">
+    <input type="text" value="{{single.FeedBack}}" name="fed"></input>
+    <input type="submit">
+</form>
+</body>
+</html>
